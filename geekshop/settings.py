@@ -147,7 +147,6 @@ LOGIN_URL = '/authapp/login/'
 LOGIN_REDIRECT_URL = '/'
 
 
-
 DOMAIN_NAME = 'http://localhost:8000'
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 25

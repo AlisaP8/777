@@ -16,13 +16,11 @@ class UserLoginForm(AuthenticationForm):
         model = User
         fields = ('username','password')
 
-
-
-    def __init__(self,*args,**kwargs):
-        super(UserLoginForm, self).__init__(*args,**kwargs)
+    def __init__(self, *args, **kwargs):
+        super(UserLoginForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs['placeholder'] = 'Введите имя пользователя'
         self.fields['password'].widget.attrs['placeholder'] = 'Введите пароль'
-        for field_name , field in self.fields.items():
+        for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control py-4'
     #
     # def clean_username(self):
@@ -37,27 +35,26 @@ class UserRegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username','email','first_name','last_name','password1','password2')
+        fields = ('username', 'email', 'first_name', 'last_name', 'password1', 'password2')
 
-    def __init__(self,*args,**kwargs):
-        super(UserRegisterForm, self).__init__(*args,**kwargs)
+    def __init__(self, *args, **kwargs):
+        super(UserRegisterForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs['placeholder'] = 'Введите имя пользователя'
         self.fields['email'].widget.attrs['placeholder'] = 'Введите адрес эл.почты'
         self.fields['first_name'].widget.attrs['placeholder'] = 'Введите  имя'
         self.fields['last_name'].widget.attrs['placeholder'] = 'Введите  фамилию'
         self.fields['password1'].widget.attrs['placeholder'] = 'Введите пароль'
         self.fields['password2'].widget.attrs['placeholder'] = 'Повторите пароль'
-        for field_name , field in self.fields.items():
+        for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control py-4'
 
-    def save(self,commit=True):
+    def save(self, commit=True):
         user = super(UserRegisterForm, self).save()
         user.is_active = False
         salt = hashlib.sha1(str(random.random()).encode('utf8')).hexdigest()[:6]
         user.activation_key = hashlib.sha1((user.email + salt).encode('utf8')).hexdigest()
         user.save()
         return user
-
 
 
 class UserProfilerForm(UserChangeForm):
@@ -69,8 +66,8 @@ class UserProfilerForm(UserChangeForm):
         model = User
         fields = ('username','email','first_name','last_name','image','age')
 
-    def __init__(self,*args,**kwargs):
-        super(UserProfilerForm, self).__init__(*args,**kwargs)
+    def __init__(self, *args, **kwargs):
+        super(UserProfilerForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs['readonly'] = True
         self.fields['email'].widget.attrs['readonly'] = True
 
