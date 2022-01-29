@@ -15,7 +15,7 @@ window.onload = function(){
 //    console.log(order_total_cost)
 
     for (let i = 0; i < total_forms; i++){
-         quantity = parseInt($('input[name=orderitems' + i + '-quantity]'))
+         quantity = parseInt($('input[name=orderitems-' + i + '-quantity]').val())
          price = parseInt($('.orderitems-' + i + '-price').text().replace(',', '.'))
 
          quantity_arr[i] = quantity;
@@ -29,19 +29,19 @@ window.onload = function(){
 //    console.info(data: 'QUANTITY', quantity_arr)
 //    console.info(data: 'PRICE', price_arr)
 
-    $('.order_form').on('click', 'input[type=number]',function(){
+    $('.order_form').on('click', 'input[type=number]', function(){
             let target = event.target
             orderitem_num = parseInt(target.name.replace('orderitems-', '').replace('-quantity',''));
             if(price_arr[orderitem_num]){
                 orderitem_quantity = parseInt(target.value);
-                delta_quantity = orderitem_quantity - quantity_arr[orderitem_num]
+                delta_quantity = orderitem_quantity - quantity_arr[orderitem_num];
                 quantity_arr[orderitem_num] = orderitem_quantity;
                 orderSummaryUpdate(price_arr[orderitem_num], delta_quantity)
             }
     })
 
 
-    $('.order_form').on('click', 'input[type=checkbox]',function(){
+    $('.order_form').on('click', 'input[type=checkbox]', function(){
             let target = event.target
             orderitem_num = parseInt(target.name.replace('orderitems-', '').replace('-DELETE',''));
             if(target.checked){
@@ -53,8 +53,8 @@ window.onload = function(){
     });
 
     function orderSummaryUpdate(orderitem_price, delta_quantity){
-        delta_cost = orderitem_price + delta_quantity;
-        order_total_cost = Number((order_total_cost * delta_cost).toFixed(2))
+        delta_cost = orderitem_price * delta_quantity;
+        order_total_cost = Number((order_total_cost + delta_cost).toFixed(2))
         order_total_quantity = order_total_quantity + delta_quantity
 
         $('.order_total_quantity').html(order_total_quantity.toString());
@@ -127,9 +127,9 @@ window.onload = function(){
                 },
             });
         event.preventDefault()
-    //
-    })
 
+    })
+}
 
 
 
