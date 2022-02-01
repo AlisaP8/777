@@ -12,7 +12,7 @@ class User(AbstractUser):
     image = models.ImageField(upload_to='users_image',blank=True)
     age = models.PositiveIntegerField(default=18)
 
-    activation_key = models.CharField(max_length=200, blank=True)
+    activation_key = models.CharField(max_length=128, blank=True)
     activation_key_expires = models.DateTimeField(auto_now=True, blank=True, null=True)
 
     def is_activation_key_expires(self):
@@ -33,7 +33,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, unique=True, null=False, db_index=True, on_delete=models.CASCADE)
     about = models.TextField(verbose_name='о себе', blank=True, null=True)
     gender = models.CharField(verbose_name='пол', choices=GENDER_CHOICES, blank=True, max_length=1)
-    langs = models.CharField(verbose_name='язык', blank=True, null=True, max_length=100)
+    langs = models.CharField(verbose_name='язык', blank=True, null=True, max_length=10)
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
