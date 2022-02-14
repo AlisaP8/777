@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 from django.views.i18n import set_language
 
 from mainapp.views import index, products
+import debug_toolbar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,3 +41,4 @@ urlpatterns = [
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += [path('debug/', include(debug_toolbar.urls))]
