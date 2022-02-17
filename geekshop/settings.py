@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
     'django.contrib.admin' ,
     'django.contrib.auth' ,
     'django.contrib.contenttypes' ,
@@ -60,6 +61,35 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware' ,
     'social_django.middleware.SocialAuthExceptionMiddleware' ,
     'debug_toolbar.middleware.DebugToolbarMiddleware' ,
+=======
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'mainapp',
+    'authapp',
+    'baskets',
+    'admins',
+    'social_django',
+    'ordersapp',
+    'debug_toolbar',
+    'template_profiler_panel',
+]
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+>>>>>>> 992336d8d24b3d760339559f369ca40e6412c154
 ]
 
 ROOT_URLCONF = 'geekshop.urls'
@@ -151,8 +181,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+<<<<<<< HEAD
 STATICFILES_DIRS = (BASE_DIR / 'static',)
 # STATIC_ROOT = os.path.join(BASE_DIR , 'static' , )
+=======
+# STATICFILES_DIRS = (BASE_DIR / 'static',)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+>>>>>>> 992336d8d24b3d760339559f369ca40e6412c154
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -203,10 +238,15 @@ SOCIAL_AUTH_PIPELINE = (
 
 )
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 992336d8d24b3d760339559f369ca40e6412c154
 if DEBUG:
     def show_toolbar(request):
         return True
 
+<<<<<<< HEAD
 
     DEBUG_TOOLBAR_CONFIG = {
         'SHOW_TOOLBAR_CALLBACK': show_toolbar ,
@@ -227,4 +267,25 @@ if DEBUG:
         'debug_toolbar.panels.redirects.RedirectsPanel' ,
         'debug_toolbar.panels.profiling.ProfilingPanel' ,
         'template_profiler_panel.panels.template.TemplateProfilerPanel' ,
+=======
+    DEBUG_TOOLBAR_CONFIG = {
+        'SHOW_TOOLBAR_CALLBACK': show_toolbar,
+    }
+
+    DEBUG_TOOLBAR_PANELS = [
+        'debug_toolbar.panels.versions.VersionsPanel',
+        'debug_toolbar.panels.timer.TimerPanel',
+        'debug_toolbar.panels.settings.SettingsPanel',
+        'debug_toolbar.panels.headers.HeadersPanel',
+        'debug_toolbar.panels.request.RequestPanel',
+        'debug_toolbar.panels.sql.SQLPanel',
+        'debug_toolbar.panels.templates.TemplatesPanel',
+        'debug_toolbar.panels.staticfiles.StaticFilesPanel',
+        'debug_toolbar.panels.cache.CachePanel',
+        'debug_toolbar.panels.signals.SignalsPanel',
+        'debug_toolbar.panels.logging.LoggingPanel',
+        'debug_toolbar.panels.redirects.RedirectsPanel',
+        'debug_toolbar.panels.profiling.ProfilingPanel',
+        'template_profiler_panel.panels.template.TemplateProfilerPanel',
+>>>>>>> 992336d8d24b3d760339559f369ca40e6412c154
     ]
