@@ -51,6 +51,7 @@ prompt-toolkit==3.0.23
 protobuf==3.19.4
 psycopg2-binary==2.9.3
 pycparser==2.21
+pydotplus==2.0.2
 Pygments==2.10.0
 pyinstaller==4.6
 pyinstaller-hooks-contrib==2021.3
