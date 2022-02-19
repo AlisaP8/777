@@ -1,7 +1,7 @@
-http://89.108.98.62/
-http://89.108.98.62/products/
-http://89.108.98.62/contact/
-http://89.108.98.62/products/category/1/
-http://89.108.98.62/products/category/2/
-http://89.108.98.62/products/category/3/
-http://89.108.98.62/products/category/4/
+http://89.108.98.64/
+http://89.108.98.64/products/
+http://89.108.98.64/products/category/5
+http://89.108.98.64/orders/
+http://89.108.98.64/orders/update/2/
+http://89.108.98.64/orders/read/2/
+http://89.108.98.64/users/profile/
