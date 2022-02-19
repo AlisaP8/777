@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'admins',
     'social_django',
     'ordersapp',
+
 ]
 
 MIDDLEWARE = [
