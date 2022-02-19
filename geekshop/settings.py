@@ -21,7 +21,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-3!qm%#5%$5g0-(%vu4%j@^x9(nvvh5h*wm^kngwb7dyq&qx4*c'
 from dotenv import load_dotenv
-
 load_dotenv(BASE_DIR / '.env')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -32,36 +31,6 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-<<<<<<< HEAD
-    'django.contrib.admin' ,
-    'django.contrib.auth' ,
-    'django.contrib.contenttypes' ,
-    'django.contrib.sessions' ,
-    'django.contrib.messages' ,
-    'django.contrib.staticfiles' ,
-    'mainapp' ,
-    'authapp' ,
-    'baskets' ,
-    'admins' ,
-    'social_django' ,
-    'ordersapp' ,
-    'debug_toolbar' ,
-    'template_profiler_panel' ,
-    'django-extensions' ,
-]
-
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware' ,
-    'django.contrib.sessions.middleware.SessionMiddleware' ,
-    'django.middleware.locale.LocaleMiddleware' ,
-    'django.middleware.common.CommonMiddleware' ,
-    'django.middleware.csrf.CsrfViewMiddleware' ,
-    'django.contrib.auth.middleware.AuthenticationMiddleware' ,
-    'django.contrib.messages.middleware.MessageMiddleware' ,
-    'django.middleware.clickjacking.XFrameOptionsMiddleware' ,
-    'social_django.middleware.SocialAuthExceptionMiddleware' ,
-    'debug_toolbar.middleware.DebugToolbarMiddleware' ,
-=======
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -89,36 +58,36 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
->>>>>>> 992336d8d24b3d760339559f369ca40e6412c154
 ]
 
 ROOT_URLCONF = 'geekshop.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates' ,
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / 'templates']
         ,
-        'APP_DIRS': True ,
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug' ,
-                'django.template.context_processors.request' ,
-                'django.contrib.auth.context_processors.auth' ,
-                'django.contrib.messages.context_processors.messages' ,
-                'django.template.context_processors.i18n' ,
-                'mainapp.context_processors.basket' ,
-                'social_django.context_processors.backends' ,
-                'social_django.context_processors.login_redirect' ,
-            ] ,
-        } ,
-    } ,
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
+                'mainapp.context_processors.basket',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
+            ],
+        },
+    },
 ]
 
 WSGI_APPLICATION = 'geekshop.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
 
 # DATABASES = {
 #     'default': {
@@ -130,28 +99,29 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql' ,
-        'NAME': 'geekshop' ,
-        'USER': 'postgres' ,
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'geekshop',
+        'USER': 'postgres',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator' ,
-    } ,
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator' ,
-    } ,
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator' ,
-    } ,
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator' ,
-    } ,
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
 ]
 
 # Internationalization
@@ -162,11 +132,11 @@ LANGUAGE_CODE = 'ru'
 ugettext = lambda s: s
 
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR , 'locale/') ,
+    os.path.join(BASE_DIR, 'locale/'),
 )
 LANGUAGES = (
-    ('en' , ugettext('English')) ,
-    ('ru' , ugettext('Russia')) ,
+    ('en', ugettext('English')),
+    ('ru', ugettext('Russia')),
 )
 
 TIME_ZONE = 'UTC'
@@ -181,13 +151,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-<<<<<<< HEAD
-STATICFILES_DIRS = (BASE_DIR / 'static',)
-# STATIC_ROOT = os.path.join(BASE_DIR , 'static' , )
-=======
 # STATICFILES_DIRS = (BASE_DIR / 'static',)
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
->>>>>>> 992336d8d24b3d760339559f369ca40e6412c154
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -216,8 +181,8 @@ LOGIN_ERROR_URL = '/'
 # # python -m smtpd -n -c DebuggingServer localhost:25
 
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend' ,
-    'social_core.backends.vk.VKOAuth2' ,
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.vk.VKOAuth2',
 )
 
 SOCIAL_AUTH_VK_OAUTH2_KEY = os.getenv('SOCIAL_AUTH_VK_OAUTH2_KEY')
@@ -227,47 +192,22 @@ SOCIAL_AUTH_VK_OAUTH2_IGNORE_DEFAULT_SCORE = True
 SOCIAL_AUTH_VK_OAUTH2_SCORE = ['email']
 
 SOCIAL_AUTH_PIPELINE = (
-    'social_core.pipeline.social_auth.social_details' ,
-    'social_core.pipeline.social_auth.social_uid' ,
-    'social_core.pipeline.social_auth.auth_allowed' ,
-    'social_core.pipeline.social_auth.social_user' ,
-    'social_core.pipeline.user.create_user' ,
-    'authapp.pipelines.save_user_profile' ,
-    'social_core.pipeline.social_auth.associate_user' ,
-    'social_core.pipeline.social_auth.load_extra_data' ,
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.create_user',
+    'authapp.pipelines.save_user_profile',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
 
 )
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 992336d8d24b3d760339559f369ca40e6412c154
 if DEBUG:
     def show_toolbar(request):
         return True
 
-<<<<<<< HEAD
-
-    DEBUG_TOOLBAR_CONFIG = {
-        'SHOW_TOOLBAR_CALLBACK': show_toolbar ,
-    }
-
-    DEBUG_TOOLBAR_PANELS = [
-        'debug_toolbar.panels.versions.VersionsPanel' ,
-        'debug_toolbar.panels.timer.TimerPanel' ,
-        'debug_toolbar.panels.settings.SettingsPanel' ,
-        'debug_toolbar.panels.headers.HeadersPanel' ,
-        'debug_toolbar.panels.request.RequestPanel' ,
-        'debug_toolbar.panels.sql.SQLPanel' ,
-        'debug_toolbar.panels.templates.TemplatesPanel' ,
-        'debug_toolbar.panels.staticfiles.StaticFilesPanel' ,
-        'debug_toolbar.panels.cache.CachePanel' ,
-        'debug_toolbar.panels.signals.SignalsPanel' ,
-        'debug_toolbar.panels.logging.LoggingPanel' ,
-        'debug_toolbar.panels.redirects.RedirectsPanel' ,
-        'debug_toolbar.panels.profiling.ProfilingPanel' ,
-        'template_profiler_panel.panels.template.TemplateProfilerPanel' ,
-=======
     DEBUG_TOOLBAR_CONFIG = {
         'SHOW_TOOLBAR_CALLBACK': show_toolbar,
     }
@@ -287,5 +227,4 @@ if DEBUG:
         'debug_toolbar.panels.redirects.RedirectsPanel',
         'debug_toolbar.panels.profiling.ProfilingPanel',
         'template_profiler_panel.panels.template.TemplateProfilerPanel',
->>>>>>> 992336d8d24b3d760339559f369ca40e6412c154
     ]
