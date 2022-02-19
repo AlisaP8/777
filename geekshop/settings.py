@@ -44,10 +44,6 @@ INSTALLED_APPS = [
     'admins',
     'social_django',
     'ordersapp',
-    'debug_toolbar',
-    'template_profiler_panel',
-    'django-extensions',
-]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
