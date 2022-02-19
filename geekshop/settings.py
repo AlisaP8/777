@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'admins',
     'social_django',
     'ordersapp',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
