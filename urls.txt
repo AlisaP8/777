@@ -1,1 +1,7 @@
+http://89.108.98.64/
+http://89.108.98.64/products/
+http://89.108.98.64/products/category/5
+http://89.108.98.64/orders/
 http://89.108.98.64/orders/update/2/
+http://89.108.98.64/orders/read/2/
+http://89.108.98.64/users/profile/
