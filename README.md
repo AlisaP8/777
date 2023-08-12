@@ -1,1 +1,1 @@
-"# geekshop_part_2" 
+Создание интернет-маганиза при помощи Django-Framework
